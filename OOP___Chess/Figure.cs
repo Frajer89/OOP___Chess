@@ -52,6 +52,11 @@ namespace OOP___Chess
             Position = position;
             Color = color;
         }
+
+        public override string ToString()
+        {
+            return Color.ToString()+ "" + Type.ToString().Substring(0, 1) + position.ToLower();
+        }
     }
 
     // výčtový datový typ - seznam hodnot - interně jsou to hodnoty integer (od 0)-
