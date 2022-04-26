@@ -55,7 +55,7 @@ namespace OOP___Chess
 
         public override string ToString()
         {
-            return Color.ToString()+ "" + Type.ToString().Substring(0, 1) + position.ToLower();
+            return Type.ToString()+ " " + Color.ToString() + " on " + position.ToLower();
         }
     }
 

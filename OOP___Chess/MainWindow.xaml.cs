@@ -25,7 +25,17 @@ namespace OOP___Chess
         public MainWindow()
         {
             InitializeComponent();
+            figures = CreateFigures();
+
+           
+
+
+        }
+
+        public List<Figure> CreateFigures()
+        {
             figures = new List<Figure>();
+
             figures.Add(new Figure(FigureType.Rook, "A8", FigureColor.Black));
             figures.Add(new Figure(FigureType.Rook, "H8", FigureColor.Black));
             figures.Add(new Figure(FigureType.Knight, "B8", FigureColor.Black));
@@ -62,20 +72,31 @@ namespace OOP___Chess
             figures.Add(new Figure(FigureType.Pawn, "D2", FigureColor.White));
             figures.Add(new Figure(FigureType.Pawn, "E2", FigureColor.White));
 
-            lblBoard.Text = "";
-            foreach(Figure figure in figures)
-            {
-                lblBoard.Text += figure.ToString() + "\n";
-            }
-
-
+            return figures;
         }
-
-        public void DrawBoard(Canvas canvas)
+        public void CreateBoard()
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.Width = canvas.Width / 8;
-            rectangle.Height = canvas.Height / 8;
+            for (int i = 0; i < 8; i++)
+            {
+                ChessBoardGrid.ColumnDefinitions.Add(
+                new ColumnDefinition()
+                {
+                    Width = new GridLength(1, GridUnitType.Star)
+
+                });
+
+                ChessBoardGrid.RowDefinitions.Add(
+                new RowDefinition()
+                {
+                    Height = new GridLength(1, GridUnitType.Star)
+
+                });
+            }
+            ChessBoardGrid.ShowGridLines = true;
+
+            
+
         }
+        
     }
 }

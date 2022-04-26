@@ -21,8 +21,13 @@
             <RowDefinition Height="23*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <Grid Name ="ChessBoardGrid" Grid.Row="3" Grid.Column="1"/>
         <TextBox x:Name="lblBoard" Text="Label" IsReadOnly="True" Grid.Column="3" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        
+    </Grid>       
+</Window>            
+        
 
 
-    </Grid>
-</Window>
+    
+
